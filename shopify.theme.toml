@@ -1,0 +1,12 @@
+[environments.production]
+theme = "REPLACE_WITH_LIVE_THEME_ID"
+store = "matriarch-coffee.myshopify.com"
+
+[environments.staging]
+theme = "REPLACE_WITH_STAGING_THEME_ID"
+store = "matriarch-coffee.myshopify.com"
+
+[environments.development]
+store = "matriarch-coffee.myshopify.com"
+# `shopify theme dev` creates a new unpublished theme automatically
+# if no theme id is set here.

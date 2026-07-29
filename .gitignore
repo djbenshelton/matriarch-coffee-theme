@@ -1,0 +1,28 @@
+# Shopify CLI / auth
+.shopify/
+config.yml
+*.env
+.env*
+
+# Merchant-editable settings data (uncomment if you want to exclude
+# theme-editor changes from version control)
+# config/settings_data.json
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build output
+dist/
+build/
+.cache/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
