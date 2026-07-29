@@ -1,0 +1,26 @@
+{
+  "current": {
+    "color_black": "#212322",
+    "color_black_deep": "#151210",
+    "color_white": "#FFFFFF",
+    "color_off_white": "#F8F8F8",
+    "color_grey_1": "#CECECE",
+    "color_grey_2": "#787676",
+    "color_grey_light": "#CCCDCD",
+    "color_grey_dark": "#5B5C5B",
+    "color_accent": "#E5FF61"
+  },
+  "presets": {
+    "Default": {
+      "color_black": "#212322",
+      "color_black_deep": "#151210",
+      "color_white": "#FFFFFF",
+      "color_off_white": "#F8F8F8",
+      "color_grey_1": "#CECECE",
+      "color_grey_2": "#787676",
+      "color_grey_light": "#CCCDCD",
+      "color_grey_dark": "#5B5C5B",
+      "color_accent": "#E5FF61"
+    }
+  }
+}

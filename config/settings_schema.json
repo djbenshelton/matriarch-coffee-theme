@@ -1,0 +1,105 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Matriarch",
+    "theme_version": "0.1.0",
+    "theme_author": "Matriarch Coffee",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand palette"
+      },
+      {
+        "type": "color",
+        "id": "color_black",
+        "label": "Black (ink / dark sections)",
+        "default": "#212322"
+      },
+      {
+        "type": "color",
+        "id": "color_black_deep",
+        "label": "Deep black",
+        "default": "#151210"
+      },
+      {
+        "type": "color",
+        "id": "color_white",
+        "label": "White",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_off_white",
+        "label": "Off-white",
+        "default": "#F8F8F8"
+      },
+      {
+        "type": "color",
+        "id": "color_grey_1",
+        "label": "Grey 1",
+        "default": "#CECECE"
+      },
+      {
+        "type": "color",
+        "id": "color_grey_2",
+        "label": "Grey 2",
+        "default": "#787676"
+      },
+      {
+        "type": "color",
+        "id": "color_grey_light",
+        "label": "Light grey (form fields)",
+        "default": "#CCCDCD"
+      },
+      {
+        "type": "color",
+        "id": "color_grey_dark",
+        "label": "Dark grey (placeholder text)",
+        "default": "#5B5C5B"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Neon accent",
+        "default": "#E5FF61"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Display font"
+      },
+      {
+        "type": "paragraph",
+        "content": "Headlines use OT Neue Montreal (Bold Squeezed). Upload the licensed .woff2 files to Assets and update the @font-face rule near the top of assets/base.css with the real font paths."
+      },
+      {
+        "type": "header",
+        "content": "Body font"
+      },
+      {
+        "type": "paragraph",
+        "content": "Body copy and UI labels use Neue Haas Grotesk Text Pro (55 Roman / 65 Medium). Same steps — upload the .woff2 files and point the @font-face rule at them."
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  }
+]

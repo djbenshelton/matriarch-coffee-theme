@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "hero-about": {
+      "type": "hero-about",
+      "settings": {
+        "eyebrow": "The Art of Coffee",
+        "heading": "Crafted With Purpose",
+        "body": "<p>Discover the essence of bold refinement — where precision, patience, and passion converge in every roast. A curated expression of craftsmanship, created to awaken all senses.</p>",
+        "heading_2": "Brewed to Inspire",
+        "eyebrow_2": "Defined by Origin",
+        "link_label": "View all"
+      }
+    },
+    "featured-collection": {
+      "type": "feat-col-crsl",
+      "settings": {
+        "products_to_show": 8,
+        "link_label": "View all"
+      }
+    },
+    "wholesale-cta": {
+      "type": "wholesale-cta",
+      "settings": {
+        "heading": "Brew beyond your cup.",
+        "body": "<p>For homes, offices, or cafés that share our obsession with craft coffee — explore our subscription and wholesale programs.</p>",
+        "link_label": "Start your wholesale order"
+      }
+    }
+  },
+  "order": ["hero-about", "featured-collection", "wholesale-cta"]
+}

@@ -1,0 +1,21 @@
+{
+  "general": {
+    "search": {
+      "title": "Search"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Account"
+    },
+    "log_in": "Log in"
+  },
+  "cart": {
+    "general": {
+      "title": "Cart"
+    }
+  },
+  "accessibility": {
+    "refresh_page": "Choosing a selection results in a full page refresh."
+  }
+}

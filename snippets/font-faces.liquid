@@ -1,0 +1,39 @@
+{%- comment -%}
+  Licensed webfont declarations, rendered inline in <head> (see
+  layout/theme.liquid). This has to be a snippet rather than a linked
+  stylesheet: Shopify's CDN serves files in /assets as raw static files, so
+  a linked "fonts.css.liquid" never gets its {{ }} tags processed and the
+  browser aborts the request. Rendering it as a snippet runs it through
+  Liquid before it hits the page, so the asset_url lookups below resolve
+  correctly.
+
+  Upload the three .woff2 files to Assets (Edit code > Assets > Add a new
+  asset, or drop them in this theme's /assets folder and `shopify theme
+  push`). If your filenames differ, update the asset_url calls below to
+  match exactly — Shopify asset URLs are case-sensitive.
+{%- endcomment -%}
+<style>
+  @font-face {
+    font-family: 'OT Neue Montreal';
+    src: url('{{ 'OTNeueMontreal-BoldSqueezed.woff2' | asset_url }}') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Grotesk Text Pro';
+    src: url('{{ 'NeueHaasGroteskTextPro-55Roman.woff2' | asset_url }}') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Grotesk Text Pro';
+    src: url('{{ 'NeueHaasGroteskTextPro-65Medium.woff2' | asset_url }}') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>

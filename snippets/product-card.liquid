@@ -1,0 +1,82 @@
+{%- comment -%}
+  Renders one product card for the featured collection carousel.
+  Accepts: product (optional) — a Shopify product object. When omitted,
+  renders a placeholder card so the section still looks right before a
+  collection has been chosen in the theme editor.
+{%- endcomment -%}
+
+<div class="product-card">
+  <a
+    href="{{ product.url | default: '#' }}"
+    class="product-card__image-link"
+  >
+    {%- if product.featured_image != blank -%}
+      {{
+        product.featured_image
+        | image_url: width: 600
+        | image_tag: loading: 'lazy', alt: product.featured_image.alt | default: product.title
+      }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'product-card__image-placeholder' }}
+    {%- endif -%}
+  </a>
+
+  <p class="product-card__title h4">{{ product.title | default: 'Product name' }}</p>
+
+  {%- if product.description != blank -%}
+    <p class="product-card__description">{{ product.description | strip_html | truncate: 90 }}</p>
+  {%- endif -%}
+
+  {%- if product != blank -%}
+  {%- form 'product', product, class: 'product-card__form' -%}
+    {%- if product.has_only_default_variant == false -%}
+      <div class="product-card__variants">
+        {%- for variant in product.variants -%}
+          <label class="product-card__variant">
+            <input
+              type="radio"
+              name="id-{{ product.id }}"
+              value="{{ variant.id }}"
+              {% if forloop.first %}checked{% endif %}
+              data-variant-radio
+            >
+            {{ variant.title }} &mdash; {{ variant.price | money }}
+          </label>
+        {%- endfor -%}
+      </div>
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-variant-id>
+    {%- else -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: '' }}">
+    {%- endif -%}
+
+    <div class="product-card__row">
+      <span class="product-card__qty" data-quantity-field>
+        <button type="button" data-qty-decrease aria-label="Decrease quantity">&minus;</button>
+        <input type="number" name="quantity" value="1" min="1" size="2" inputmode="numeric">
+        <button type="button" data-qty-increase aria-label="Increase quantity">&plus;</button>
+      </span>
+
+      <button type="submit" class="product-card__add" {% if product.available == false %}disabled{% endif %}>
+        {%- if product.available == false -%}
+          Sold out
+        {%- else -%}
+          Add to cart
+        {%- endif -%}
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+  {%- endform -%}
+  {%- else -%}
+    <div class="product-card__row">
+      <span class="product-card__qty" data-quantity-field>
+        <button type="button" disabled aria-label="Decrease quantity">&minus;</button>
+        <input type="number" value="1" min="1" size="2" inputmode="numeric" disabled>
+        <button type="button" disabled aria-label="Increase quantity">&plus;</button>
+      </span>
+      <button type="button" class="product-card__add" disabled>
+        Add to cart
+        {% render 'icon-arrow' %}
+      </button>
+    </div>
+  {%- endif -%}
+</div>

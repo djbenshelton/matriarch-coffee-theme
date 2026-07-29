@@ -1,0 +1,19 @@
+{%- comment -%}
+  Simple right-pointing arrow icon, used for "View all" links.
+  Rotate via CSS (see .hero__view-all .icon / .carousel-section__view-all .icon)
+  to point the arrow up/down/left where needed.
+{%- endcomment -%}
+<svg
+  class="icon icon-arrow{% if class %} {{ class }}{% endif %}"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  <line x1="4" y1="12" x2="20" y2="12"></line>
+  <polyline points="13 5 20 12 13 19"></polyline>
+</svg>

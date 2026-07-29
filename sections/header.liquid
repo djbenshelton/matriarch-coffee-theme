@@ -1,0 +1,82 @@
+<header class="site-header" data-section-id="{{ section.id }}" data-section-type="header">
+  <div class="site-header__inner">
+
+    <div class="site-header__menu">
+      <button
+        type="button"
+        class="site-header__menu-toggle"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="site-nav-{{ section.id }}"
+      >
+        {{ section.settings.menu_label | default: 'Menu' }}
+      </button>
+    </div>
+
+    <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        {{
+          section.settings.logo
+          | image_url: width: 320
+          | image_tag: loading: 'eager', alt: shop.name, class: 'site-header__logo-image'
+        }}
+      {%- else -%}
+        <span class="h5">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <div class="site-header__utility">
+      <a href="{{ routes.search_url }}" class="site-header__utility-link site-header__utility-link--search">
+        {{ 'general.search.title' | t | default: 'Search' }}
+      </a>
+      <a href="{{ routes.account_url }}" class="site-header__utility-link site-header__utility-link--account">
+        {%- if customer -%}
+          {{ 'customer.account.title' | t | default: 'Account' }}
+        {%- else -%}
+          {{ 'customer.log_in' | t | default: 'Log in' }}
+        {%- endif -%}
+      </a>
+      <a href="{{ routes.cart_url }}" class="site-header__utility-link site-header__utility-link--cart">
+        {{ 'cart.general.title' | t | default: 'Cart' }}
+        <span class="site-header__cart-count" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    </div>
+
+  </div>
+
+  <nav id="site-nav-{{ section.id }}" class="site-nav" data-nav aria-hidden="true">
+    <button type="button" class="site-nav__close" data-nav-close>Close</button>
+    <ul class="site-nav__list">
+      {%- for link in section.settings.menu.links -%}
+        <li>
+          <a class="site-nav__link" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "menu_label",
+      "label": "Menu button label",
+      "default": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}
